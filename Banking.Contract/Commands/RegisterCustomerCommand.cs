@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Banking.Contract.Commands
 {
-    public class RegisterCustomerCommand
+    public class RegisterCustomerCommand:ICommand
     {
         public Guid Customer { get; set; }
         public string NationalCode { get; private set; }
