@@ -2,8 +2,8 @@
 
 namespace Banking.Contract.Commands
 {
-    public interface ICommandHandler
+    public interface ICommandHandler<in T>where T:ICommand
     {
-        void Send<TCommand>(TCommand command) where TCommand:ICommand;
+        void Send(T command) ;
     }
 }

@@ -29,9 +29,11 @@ namespace Banking.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<ICommandHandler<RegisterCustomerCommand>, RegisterCustomerCommandHandler>();
+            services.AddSingleton<ICommandDispatcher>(sp => { return new CommandDispatcher(sp); });
+            services.AddTransient<ICommandHandler<RegisterCustomerCommand>, RegisterCustomerCommandHandler> ();
 
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -50,5 +52,7 @@ namespace Banking.Presentation
                 endpoints.MapControllers();
             });
         }
+
     }
+
 }

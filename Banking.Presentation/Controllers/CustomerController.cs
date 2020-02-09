@@ -13,18 +13,18 @@ namespace Banking.Presentation.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly ICommandHandler commandHandler;
+        private readonly ICommandDispatcher commandDispatcher;
 
-        public CustomerController(ICommandHandler commandHandler)
+        public CustomerController(ICommandDispatcher commandDispatcher)
         {
-            this.commandHandler = commandHandler;
+            this.commandDispatcher = commandDispatcher;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             var birth=new DateTime(1997,08,25);
-            commandHandler.Send<RegisterCustomerCommand>(new RegisterCustomerCommand(Guid.NewGuid(),"1200183347", birth,true,"021333333","09135490057"));
+            await commandDispatcher.Dispatch<RegisterCustomerCommand>(new RegisterCustomerCommand(Guid.NewGuid(),"1200183347", birth,true,"021333333","09135490057"));
             return Accepted();
         }
     }
