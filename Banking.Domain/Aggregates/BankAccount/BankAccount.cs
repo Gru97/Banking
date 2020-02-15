@@ -7,13 +7,34 @@ namespace Banking.Domain
 {
     public class BankAccount:Entity,IAggregateRoot
     {
-        public decimal Balance { get;private set; }
-        public AccountNumber AccountNumber { get; private set; }
-        public AccountType Type { get; private set; }
-        public Guid CustomerId { get; private set; }
+        private decimal _balance;
+        private Guid _customerId;
+        private AccountType _accountType;
+        private AccountNumber _accountNumber;
 
-      
+        public decimal Balance
+        {
+            get => _balance;
+            private set => _balance = value;
+        }
 
+        public AccountNumber AccountNumber
+        {
+            get => _accountNumber;
+            set => _accountNumber = value;
+        }
+
+        public AccountType AccountType
+        {
+            get => _accountType;
+            private set => _accountType = value;
+        }
+
+        public Guid CustomerId
+        {
+            get => _customerId;
+            private set => _customerId = value;
+        }
         public void Deposit(decimal value)
         {
             Balance += value;
@@ -26,12 +47,11 @@ namespace Banking.Domain
 
         }
 
-        public void OpenAccount(AccountType type, Guid customerId, decimal balance, AccountType accountType)
+        public void OpenAccount(AccountType type, Guid customerId, decimal balance)
         {
-            Balance = balance;
-            Type = type;
-            CustomerId = customerId;
-            Type = accountType;
+            _balance = balance;
+            _accountType = type;
+            _customerId = customerId;
 
         }
 

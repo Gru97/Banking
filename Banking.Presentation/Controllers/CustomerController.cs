@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Banking.Contract.Commands;
+using Banking.Contract.SeedWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,7 +25,17 @@ namespace Banking.Presentation.Controllers
         public async Task<IActionResult> Get()
         {
             var birth=new DateTime(1997,08,25);
-            await commandDispatcher.Dispatch<RegisterCustomerCommand>(new RegisterCustomerCommand(Guid.NewGuid(),"1200183347", birth,true,"021333333","09135490057"));
+            var command =
+                new RegisterCustomerCommand(Guid.NewGuid(), 
+                    "1200183347", 
+                    birth,
+                    0, 
+                    "Esfahan",
+                    "123",
+                    "Foroughi",
+                    "021333333", 
+                    "09135490057");
+            await commandDispatcher.Dispatch<RegisterCustomerCommand>(command);
             return Accepted();
         }
     }

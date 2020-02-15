@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Banking.Contract.Commands;
+using Banking.Contract.SeedWork;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Banking.Contract.Commands
+namespace Banking.Application.CommandHandlers
 {
     public class CommandDispatcher:ICommandDispatcher
     {
@@ -20,7 +22,7 @@ namespace Banking.Contract.Commands
         {
 
             var commandHandler = serviceProvider.GetRequiredService<ICommandHandler<T>>();
-            commandHandler.Send(command);
+            commandHandler.Handle(command);
             return Task.CompletedTask;
         }
     }

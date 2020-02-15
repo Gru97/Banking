@@ -3,13 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Domain", "Banking.Domain\Banking.Domain.csproj", "{E2137B6D-2964-490D-845F-D0CB8CCBF8F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Domain", "Banking.Domain\Banking.Domain.csproj", "{E2137B6D-2964-490D-845F-D0CB8CCBF8F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Application", "Banking.Application\Banking.Application.csproj", "{B096110B-052C-4276-A8F7-F2881DBABA2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Application", "Banking.Application\Banking.Application.csproj", "{B096110B-052C-4276-A8F7-F2881DBABA2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Contract", "Banking.Contract\Banking.Contract.csproj", "{B77C8C59-591E-4509-BC0A-B00138FB7425}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Contract", "Banking.Contract\Banking.Contract.csproj", "{B77C8C59-591E-4509-BC0A-B00138FB7425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Presentation", "Banking.Presentation\Banking.Presentation.csproj", "{D6685BC3-15A8-41F1-ACAF-6FCBDB194A66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Presentation", "Banking.Presentation\Banking.Presentation.csproj", "{D6685BC3-15A8-41F1-ACAF-6FCBDB194A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Infrastructure", "Banking.Infrastructure\Banking.Infrastructure.csproj", "{6A583F15-D512-49FA-9C2F-F18ACE1F6086}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C5F0D1CA-5CF6-488B-A56A-47F638EF9ABA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{53BFBFE8-0709-4FCD-BA2C-216479CD3AFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B6E95CD4-9704-4687-B380-7F9A43C7CB60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{52039376-8E65-4552-AC5F-0C410595100C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +43,20 @@ Global
 		{D6685BC3-15A8-41F1-ACAF-6FCBDB194A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6685BC3-15A8-41F1-ACAF-6FCBDB194A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6685BC3-15A8-41F1-ACAF-6FCBDB194A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A583F15-D512-49FA-9C2F-F18ACE1F6086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A583F15-D512-49FA-9C2F-F18ACE1F6086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A583F15-D512-49FA-9C2F-F18ACE1F6086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A583F15-D512-49FA-9C2F-F18ACE1F6086}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2137B6D-2964-490D-845F-D0CB8CCBF8F1} = {C5F0D1CA-5CF6-488B-A56A-47F638EF9ABA}
+		{B096110B-052C-4276-A8F7-F2881DBABA2D} = {53BFBFE8-0709-4FCD-BA2C-216479CD3AFB}
+		{B77C8C59-591E-4509-BC0A-B00138FB7425} = {C5F0D1CA-5CF6-488B-A56A-47F638EF9ABA}
+		{D6685BC3-15A8-41F1-ACAF-6FCBDB194A66} = {B6E95CD4-9704-4687-B380-7F9A43C7CB60}
+		{6A583F15-D512-49FA-9C2F-F18ACE1F6086} = {52039376-8E65-4552-AC5F-0C410595100C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5217F22E-C854-467F-97F0-C5CA9805F2EB}
