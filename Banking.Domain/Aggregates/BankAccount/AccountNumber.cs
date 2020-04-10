@@ -2,11 +2,15 @@
 
 namespace Banking.Domain
 {
-    public class AccountNumber:ValueObject
+    public class AccountNumber : ValueObject
     {
-        public string Number { get; set; }
+        public string Number { get; private set; }
 
-        public AccountNumber(string code,string nationalCode)
+        private AccountNumber()
+        {
+            
+        }
+        public AccountNumber(string code, string nationalCode)
         {
             Number = code + nationalCode;
         }

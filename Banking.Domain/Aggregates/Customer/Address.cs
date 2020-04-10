@@ -10,7 +10,7 @@ namespace Banking.Domain
             City = city;
             PostalCode = postalCode;
         }
-
+        private Address() { }
         public string Street { get; private set; }
         public string City { get; private set; }
         public string PostalCode { get; private set; }

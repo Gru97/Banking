@@ -8,6 +8,10 @@ namespace Banking.Domain
         public string Title { get; private set; }
         public string Code { get; private set; }
 
+        private AccountType()
+        {
+                
+        }
         public AccountType(string title, string code)
         {
             Title = title;

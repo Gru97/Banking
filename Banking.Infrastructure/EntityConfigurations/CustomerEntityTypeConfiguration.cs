@@ -14,7 +14,8 @@ namespace Banking.Infrastructure.EntityConfigurations
             builder.HasKey(e => e.Id);
             builder.OwnsOne(e => e.HomeAddress);
             builder.OwnsOne(e => e.Phone);
-            builder.OwnsOne(e => e.HomeAddress);
+            
+            builder.Ignore(e => e.Events);
 
 
         }

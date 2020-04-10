@@ -47,12 +47,12 @@ namespace Banking.Domain
 
         }
 
-        public void OpenAccount(AccountType type, Guid customerId, decimal balance)
+        public void OpenAccount(AccountType type, Guid customerId,string nationalCode, decimal balance)
         {
             _balance = balance;
             _accountType = type;
             _customerId = customerId;
-
+            _accountNumber=new AccountNumber(type.Code, nationalCode);
         }
 
        

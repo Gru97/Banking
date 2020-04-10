@@ -49,6 +49,9 @@ namespace Banking.Domain
         }
 
         public IReadOnlyCollection<AccountNumber> BankAcounts => _bankAcounts;
+        private Customer()
+        {
+        }
 
         public Customer(string nationalCode,
             DateTime birth, 

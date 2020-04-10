@@ -28,7 +28,13 @@ namespace Banking.Infrastructure
 
         public async Task SaveAsync()
         {
+            await DispatchEventsAsync();
             await this.SaveChangesAsync();
+        }
+
+        private async Task DispatchEventsAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }
