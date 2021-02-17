@@ -24,17 +24,17 @@ namespace Banking.Presentation.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var birth=new DateTime(1997,08,25);
+            var birth=new DateTime(1922,01,01);
             var command =
                 new RegisterCustomerCommand(Guid.NewGuid(), 
-                    "1200183347", 
+                    "123456789", 
                     birth,
                     0, 
-                    "Esfahan",
+                    "somewhere",
                     "123",
-                    "Foroughi",
+                    "somewhere",
                     "021333333", 
-                    "09135490057");
+                    "012444444");
             await commandDispatcher.Dispatch<RegisterCustomerCommand>(command);
             return Accepted();
         }
